@@ -51,8 +51,8 @@
 ;; This mode will improve various aspects of your writing in many ways.
 ;; With this mode text within comments will be searched for the
 ;; the duplicate propblem.
-;; The text is searched and aspects (even withing comments) are 
-;; highlighted. 
+;; The text is searched and aspects (even withing comments) are
+;; highlighted.
 ;; Another benefit is the the finding of duplicates.
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -84,22 +84,22 @@
   :group 'writegood)
 
 (defcustom writegood-weasel-words
-  '("many" "various" "very" "fairly" "several" "extremely" 
-    "exceedingly" "quite" "remarkably" "few" "surprisingly" 
-    "mostly" "largely" "huge" "tiny" "are a number" "is a number" 
-    "excellent" "interestingly" "significantly" "substantially" 
+  '("many" "various" "very" "fairly" "several" "extremely"
+    "exceedingly" "quite" "remarkably" "few" "surprisingly"
+    "mostly" "largely" "huge" "tiny" "are a number" "is a number"
+    "excellent" "interestingly" "significantly" "substantially"
     "clearly" "vast" "relatively" "completely")
   "The weasel words to use"
   :group 'writegood
   :type 'list)
-  
+
 (defvar writegood-weasels-font-lock-keywords-regexp
   (concat "\\b" (regexp-opt writegood-weasel-words) "\\b")
   "Matches weasel-words")
 
 (defvar writegood-weasels-font-lock-keywords
   (list (list writegood-weasels-font-lock-keywords-regexp
-	      0 (quote 'writegood-weasels-face) 'prepend)))
+              0 (quote 'writegood-weasels-face) 'prepend)))
 
 ;; Passive Voice
 (defface writegood-passive-voice-face
@@ -109,28 +109,28 @@
   :group 'writegood)
 
 (defcustom writegood-passive-voice-irregulars
-  '("awoken" "been" "born" "beat" "become" "begun" "bent" "beset" 
-    "bet" "bid" "bidden" "bound" "bitten" "bled" "blown" "broken" 
-    "bred" "brought" "broadcast" "built" "burnt" "burst" "bought" 
-    "cast" "caught" "chosen" "clung" "come" "cost" "crept" "cut" 
-    "dealt" "dug" "dived" "done" "drawn" "dreamt" "driven" "drunk" 
-    "eaten" "fallen" "fed" "felt" "fought" "found" "fit" "fled" 
-    "flung" "flown" "forbidden" "forgotten" "foregone" "forgiven" 
-    "forsaken" "frozen" "gotten" "given" "gone" "ground" "grown" 
-    "hung" "heard" "hidden" "hit" "held" "hurt" "kept" "knelt" "knit" 
-    "known" "laid" "led" "leapt" "learnt" "left" "lent" "let" "lain" 
-    "lighted" "lost" "made" "meant" "met" "misspelt" "mistaken" "mown" 
-    "overcome" "overdone" "overtaken" "overthrown" "paid" "pled" "proven" 
-    "put" "quit" "read" "rid" "ridden" "rung" "risen" "run" "sawn" 
-    "said" "seen" "sought" "sold" "sent" "set" "sewn" "shaken" "shaven" 
-    "shorn" "shed" "shone" "shod" "shot" "shown" "shrunk" "shut" 
-    "sung" "sunk" "sat" "slept" "slain" "slid" "slung" "slit" 
-    "smitten" "sown" "spoken" "sped" "spent" "spilt" "spun" "spit" 
-    "split" "spread" "sprung" "stood" "stolen" "stuck" "stung" 
-    "stunk" "stridden" "struck" "strung" "striven" "sworn" "swept" 
-    "swollen" "swum" "swung" "taken" "taught" "torn" "told" "thought" 
-    "thrived" "thrown" "thrust" "trodden" "understood" "upheld" "upset" 
-    "woken" "worn" "woven" "wed" "wept" "wound" "won" "withheld" 
+  '("awoken" "been" "born" "beat" "become" "begun" "bent" "beset"
+    "bet" "bid" "bidden" "bound" "bitten" "bled" "blown" "broken"
+    "bred" "brought" "broadcast" "built" "burnt" "burst" "bought"
+    "cast" "caught" "chosen" "clung" "come" "cost" "crept" "cut"
+    "dealt" "dug" "dived" "done" "drawn" "dreamt" "driven" "drunk"
+    "eaten" "fallen" "fed" "felt" "fought" "found" "fit" "fled"
+    "flung" "flown" "forbidden" "forgotten" "foregone" "forgiven"
+    "forsaken" "frozen" "gotten" "given" "gone" "ground" "grown"
+    "hung" "heard" "hidden" "hit" "held" "hurt" "kept" "knelt" "knit"
+    "known" "laid" "led" "leapt" "learnt" "left" "lent" "let" "lain"
+    "lighted" "lost" "made" "meant" "met" "misspelt" "mistaken" "mown"
+    "overcome" "overdone" "overtaken" "overthrown" "paid" "pled" "proven"
+    "put" "quit" "read" "rid" "ridden" "rung" "risen" "run" "sawn"
+    "said" "seen" "sought" "sold" "sent" "set" "sewn" "shaken" "shaven"
+    "shorn" "shed" "shone" "shod" "shot" "shown" "shrunk" "shut"
+    "sung" "sunk" "sat" "slept" "slain" "slid" "slung" "slit"
+    "smitten" "sown" "spoken" "sped" "spent" "spilt" "spun" "spit"
+    "split" "spread" "sprung" "stood" "stolen" "stuck" "stung"
+    "stunk" "stridden" "struck" "strung" "striven" "sworn" "swept"
+    "swollen" "swum" "swung" "taken" "taught" "torn" "told" "thought"
+    "thrived" "thrown" "thrust" "trodden" "understood" "upheld" "upset"
+    "woken" "worn" "woven" "wed" "wept" "wound" "won" "withheld"
     "withstood" "wrung" "written")
   "List of passive voice irregular verbs"
   :group 'writegood
@@ -138,13 +138,64 @@
 
 (defvar writegood-passive-voice-font-lock-keywords-regexp
   (concat "\\b\\(am\\|are\\|were\\|being\\|is\\|been\\|was\\|be\\)\\b\\([[:space:]]\\|\\s<\\|\\s>\\)+\\([[:word:]]+ed\\|"
-	  (regexp-opt writegood-passive-voice-irregulars)
-	  "\\)")
+          (regexp-opt writegood-passive-voice-irregulars)
+          "\\)")
   "Font-lock keywords regexp for passive-voice")
 
 (defvar writegood-passive-voice-font-lock-keywords
   (list (list writegood-passive-voice-font-lock-keywords-regexp
-	      0 (quote 'writegood-passive-voice-face) 'prepend)))
+              0 (quote 'writegood-passive-voice-face) 'prepend)))
+
+;; Mistakes in irregular verb conjugation
+(defface writegood-wrong-irregulars-face
+  '((((class color) (background light))
+     (:inherit font-lock-warning-face :background "MistyRose"))
+    (((class color) (background dark))
+     (:inherit font-lock-warning-face :background "DeepPink")))
+  "Writegood face for mistaken irregular verbs"
+  :group 'writegood)
+
+(defcustom writegood-wrong-irregulars
+  '("arised" "awaked" "beed" "beared" "beated" "becomed" "begined"
+"beholded" "bended" "beted" "bided" "bided" "binded" "bited" "bleded"
+"blowed" "breaked" "breded" "bringed" "broadcasted" "builded" "burned"
+"bursted" "busted" "buyed" "casted" "catched" "choosed" "claped"
+"clinged" "clothed" "comed" "costed" "creped" "cuted" "dealed" "diged"
+"dived" "doed" "drawed" "dreamed" "drinked" "drived" "dwelled" "eated"
+"falled" "feeded" "feeled" "fighted" "finded" "fited" "fleed" "flinged"
+"flyed" "forbided" "forecasted" "foreseed" "foretelled" "forgeted"
+"forgived" "forsaked" "freezed" "frostbited" "geted" "gived" "goed"
+"grinded" "growed" "handwrited" "hanged" "haved" "heared" "hided"
+"hited" "holded" "hurted" "inlayed" "inputed" "interlayed" "keped"
+"kneeled" "knited" "knowed" "layed" "leaded" "leaned" "leaped" "learned"
+"leaved" "lended" "leted" "lied" "lighted" "losed" "maked" "meaned"
+"meeted" "melted" "misleaded" "mistaked" "misunderstanded" "misweded"
+"mowed" "overdrawed" "overheared" "overtaked" "payed" "preseted"
+"proved" "puted" "quited" "readed" "rided" "rided" "ringed"
+"rised" "rived" "runed" "sawed" "sayed" "seed" "seeked" "selled"
+"sended" "seted" "sewed" "shaked" "shaved" "sheared" "sheded" "shined"
+"shoed" "shooted" "showed" "shrinked" "shuted" "singed" "sinked" "sited"
+"slayed" "sleped" "slided" "slinged" "slinked" "slited" "smelled"
+"sneaked" "soothsayed" "sowed" "speaked" "speded" "spelled" "spended"
+"spilled" "spined" "spited" "splited" "spoiled" "spreaded" "springed"
+"standed" "stealed" "sticked" "stinged" "stinked" "striked" "stringed"
+"strived" "subleted" "sunburned" "sweared" "sweated" "sweped" "swelled"
+"swimed" "swinged" "taked" "teached" "teared" "telled" "thinked"
+"thrived" "throwed" "thrusted" "treaded" "undergoed" "understanded"
+"undertaked" "upseted" "vexed" "waked" "weared" "weaved" "weded"
+"weeped" "wended" "weted" "wined" "winded" "withdrawed" "withholded"
+"withstanded" "wringed" "writed" "zinced")
+  "List of irregular verb mistakes"
+  :group 'writegood
+  :type 'list)
+
+(defvar writegood-wrong-irregulars-font-lock-keywords-regexp
+  (concat "\\b" (regexp-opt writegood-wrong-irregulars) "\\b")
+  "Matches irregular verb mistakes")
+
+(defvar writegood-wrong-irregulars-font-lock-keywords
+  (list (list writegood-wrong-irregulars-font-lock-keywords-regexp
+              0 (quote 'writegood-wrong-irregulars-face) 'prepend)))
 
 ;; Duplicates
 (defface writegood-duplicates-face
@@ -161,7 +212,7 @@
 
 (defvar writegood-duplicates-font-lock-keywords
   (list (list writegood-duplicates-font-lock-keywords-regexp
-	      0 (quote 'writegood-duplicates-face) 'prepend)))
+              0 (quote 'writegood-duplicates-face) 'prepend)))
 
 ;;;;;;;;;;;;;;;;;;;; Functions:
 
@@ -174,6 +225,10 @@
   "Turn on syntax highlighting for weasels"
   (font-lock-add-keywords nil writegood-weasels-font-lock-keywords))
 
+(defun writegood-wrong-irregulars-turn-on ()
+  "Turn on syntax highlighting for irregular verb mistakes"
+  (font-lock-add-keywords nil writegood-wrong-irregulars-font-lock-keywords))
+
 (defun writegood-passive-voice-turn-on ()
   "Turn on warnings for passive voice"
   (font-lock-add-keywords nil writegood-passive-voice-font-lock-keywords))
@@ -182,9 +237,9 @@
   "Turn on warnings for duplicate words"
   (font-lock-add-keywords nil writegood-duplicates-font-lock-keywords))
 
-(defun writegood-weasels-turn-off ()
-  "Turn on syntax highlighting for weasels"
-  (font-lock-remove-keywords nil writegood-weasels-font-lock-keywords))
+(defun writegood-wrong-irregulars-turn-off ()
+  "Turn on syntax highlighting for irregular verb mistakes"
+  (font-lock-remove-keywords nil writegood-wrong-irregulars-font-lock-keywords))
 
 (defun writegood-passive-voice-turn-off ()
   "Turn on warnings for passive voice"
@@ -199,12 +254,14 @@
   (make-local-variable 'font-lock-keywords-case-fold-search)
   (setq font-lock-keywords-case-fold-search t)
   (writegood-weasels-turn-on)
+  (writegood-wrong-irregulars-turn-on)
   (writegood-passive-voice-turn-on)
   (writegood-duplicates-turn-on))
 
 (defun writegood-turn-off ()
   "Turn off writegood-mode."
   (writegood-weasels-turn-off)
+  (writegood-wrong-irregulars-turn-off)
   (writegood-passive-voice-turn-off)
   (writegood-duplicates-turn-off))
 
@@ -213,7 +270,7 @@
   :lighter " Wg"
   (progn
     (if writegood-mode
-	(writegood-turn-on)
+        (writegood-turn-on)
       (writegood-turn-off))
     (font-lock-mode 1)))
 
